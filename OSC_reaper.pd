@@ -1,4 +1,4 @@
-#N canvas 475 59 1469 866 12;
+#N canvas 629 104 1469 866 12;
 #X obj 735 676 netsend -u -b;
 #X msg 860 490 connect 127.0.0.1 8001;
 #X obj 820 386 oscformat -f f play;
@@ -40,10 +40,17 @@
 #X msg 456 466 127;
 #X msg 403 465 0;
 #X text 450 536 /vkb_midi/@/cc/# i;
-#X obj 294 588 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 256;
-#X obj 296 641 oscformat -f i vkb_midi 0 cc 14;
+#X obj 247 629 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 256;
+#X obj 249 682 oscformat -f i vkb_midi 0 cc 14;
 #X obj 241 496 * 127;
 #X obj 245 535 / 4095;
+#X text 287 594 smooth la transition;
+#X obj 247 573 pdchoco/stream_smooth 0.1 0.1;
+#X text 306 124 section arduino -> pure data;
+#X text 434 368 section pure data -> reaper;
+#X text 45 611 section pure data -> reaper;
+#X text 924 323 section pure data -> reaper;
+#X text 156 394 section arduino + pure data -> reaper;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
@@ -78,4 +85,5 @@
 #X connect 41 0 42 0;
 #X connect 42 0 0 0;
 #X connect 43 0 44 0;
-#X connect 44 0 41 0;
+#X connect 44 0 46 0;
+#X connect 46 0 41 0;
